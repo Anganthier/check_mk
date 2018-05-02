@@ -1,0 +1,12 @@
+version: '2.3'
+volumes:
+  omd-site:
+
+services:
+  cmk:
+    image: nlmacamp/check_mk
+    volumes: 
+      - omd-site:/omd/sites/mva/ 
+    ports:
+      - "80:5000"
+      - "5667:5667"
